@@ -68,6 +68,13 @@ body {
 .header-container__icon-list img {
   margin-right: 20px;
 }
+
+.test {
+  background-color: blue;
+  position: absolute;
+  top: 5%;
+}
+
 /*HOME PAGE-------------------------------*/
 .home_container {
   height: 100vh;
@@ -83,6 +90,7 @@ body {
 
 .home__video-item {
   text-align: center;
+  justify-self: center;
   width: 350px;
   height: 196px;
   padding: 0 15px;

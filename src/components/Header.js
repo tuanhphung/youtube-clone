@@ -23,9 +23,21 @@ const Header = (props) => {
   };
 
   return (
-    <div className='header-container'>
+    <nav className='header-container'>
       <div className='header-container__logo-container'>
-        <img src={menu_icon} alt='menu_icon' className='header-container__icon' />
+        <ul>
+          <li>
+            <img src={menu_icon} alt='menu_icon' className='header-container__icon' />
+            <div class='test'>
+              <ul>
+                <li> test1</li>
+                <li> test2</li>
+                <li> test3</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
         <Link to='/'>
           <img src={logo} alt='logo' className='header-container__logo' />
         </Link>
@@ -47,13 +59,13 @@ const Header = (props) => {
           onClick={onFormSubmit}
         />
       </div>
-      <div className='header-container__icon-list'>
+      <ul className='header-container__icon-list'>
         <img src={camera_icon} alt='camera_icon' className='header-container__icon' />
         <img src={app_icon} alt='app_icon' className='header-container__icon' />
         <img src={bell_icon} alt='bell_icon' className='header-container__icon' />
         <img src={avatar} alt='avatar_icon' className='header-container__icon' />
-      </div>
-    </div>
+      </ul>
+    </nav>
   );
 };
 
