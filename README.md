@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Youtube Clone
+Made with React.js Framework and HTML / CSS for markup.
+YouTube API used to to fetch videos.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aim : Make a webapp that utilises Redux for state management.
 
-## Available Scripts
+# Libraries Used
 
-In the project directory, you can run:
+## React-Router
+Used to route url paths to certain components.
+Each path (**/ , /watch, /history, /history**) is routed to to a components which will load once the user accesses that path.
 
-### `npm start`
+## Redux 
+Use of action creators and reducers to create store state in Redux.
+Videos fetched from the API, favourited videos and history states are all located in the Redux store.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Redux-Thunk
+Middleware which allows for asynchronous action creators.
+This thunk is used to call the YouTube API before being passed into the reducers and in to the Redux store.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## React-Redux
+Allows components to connect and retrieve states from the redux store.
 
-### `npm test`
+## Axios
+Library used to make requests to the YouTube API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Personal Feedback
+* Could add transisitions via CSS or library such as Framer-Motion for better transisitions between pages and the burger menu.
+* Comments in the Redux store is only one state, which appears for all the videos instead of for each video.
+  * Possible solution is to add a new property 'comments' for each video retrieved from the API.
+  * Load the video along with its comments **on selected**
+* Set class names of elements using the CSS BEM (Block Element Modifier) method for easier styling.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
