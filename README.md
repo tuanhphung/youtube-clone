@@ -8,7 +8,7 @@ Aim : Make a webapp that utilises Redux for state management.
 
 ## React-Router
 Used to route url paths to certain components.
-Each path (**/ , /watch, /history, /history**) is routed to to a components which will load once the user accesses that path.
+Each path (**/ , /watch, /history, /favourites**) is routed to to a components which will load once the user accesses that path.
 
 ## Redux 
 Use of action creators and reducers to create store state in Redux.
