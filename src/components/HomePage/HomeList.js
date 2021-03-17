@@ -11,8 +11,6 @@ const mapStateToProps = (state) => {
 };
 
 const HomeList = (props) => {
-  console.log(props.videos);
-
   const renderList = (list) => {
     if (list.items === undefined) {
       return null;

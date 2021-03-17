@@ -8,6 +8,8 @@ import search_icon from "../assets/search_icon.svg";
 import app_icon from "../assets/app_icon.svg";
 import avatar from "../assets/user.svg";
 
+import Sidebar from "./HomePage/Sidebar/Sidebar";
+
 import { connect } from "react-redux";
 import { fetchVideos } from "../actions";
 import { Link, useHistory } from "react-router-dom";
@@ -15,27 +17,30 @@ import { Link, useHistory } from "react-router-dom";
 const Header = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const history = useHistory();
+  const [open, setOpen] = useState(false);
 
+  //call api for the search term
   const onFormSubmit = (event) => {
     event.preventDefault();
     props.fetchVideos(searchTerm);
     history.push("/");
   };
 
+  const toggleSidebar = () => {
+    setOpen(!open);
+  };
+
   return (
     <nav className='header-container'>
       <div className='header-container__logo-container'>
         <ul>
-          <li>
-            <img src={menu_icon} alt='menu_icon' className='header-container__icon' />
-            <div class='test'>
-              <ul>
-                <li> test1</li>
-                <li> test2</li>
-                <li> test3</li>
-              </ul>
-            </div>
-          </li>
+          <img
+            src={menu_icon}
+            alt='menu_icon'
+            className='header-container__icon'
+            onClick={() => toggleSidebar()}
+          />
+          {open ? <Sidebar open={open} toggleClick={() => toggleSidebar()} /> : null}
         </ul>
 
         <Link to='/'>

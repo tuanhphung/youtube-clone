@@ -27,11 +27,31 @@ const commentsReducer = (comments = [], action) => {
   }
 };
 
+const favouritesReducer = (favourites = [], action) => {
+  switch (action.type) {
+    case "FAVOURITE_VIDEO":
+      return [...favourites, action.payload];
+    default:
+      return favourites;
+  }
+};
+
+const historyReducer = (history = [], action) => {
+  switch (action.type) {
+    case "GET_HISTORY":
+      return [...history, action.payload];
+    default:
+      return history;
+  }
+};
+
 //combine reducers to create redux store
 const allReducers = combineReducers({
   videos: videosReducer,
   selectedVideo: selectedVideoReducer,
   comments: commentsReducer,
+  favourites: favouritesReducer,
+  history: historyReducer,
 });
 
 export default allReducers;

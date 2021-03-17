@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectVideo } from "../actions";
+import { selectVideo, getHistory } from "../actions";
 import { Link } from "react-router-dom";
 
 const mapStateToProps = (state) => {
@@ -10,14 +10,19 @@ const mapStateToProps = (state) => {
 };
 
 const VideoItem = (props) => {
+  //make clciked video selected (to show on /watch and add to history state)
+  const makeSelectedandAddtoHistory = () => {
+    props.selectVideo(props.video);
+    props.getHistory(props.video);
+  };
+
   return (
     <Link to='/watch'>
-      <div className='video-item'>
+      <div className='video-item' onClick={() => makeSelectedandAddtoHistory()}>
         <div>
           <img
             alt={props.video.snippet.title}
             src={props.video.snippet.thumbnails.high.url}
-            onClick={() => props.selectVideo(props.video)}
           />
         </div>
         <h4 className='video-item__title'>{props.video.snippet.title}</h4>
@@ -26,4 +31,4 @@ const VideoItem = (props) => {
   );
 };
 
-export default connect(mapStateToProps, { selectVideo })(VideoItem);
+export default connect(mapStateToProps, { selectVideo, getHistory })(VideoItem);
