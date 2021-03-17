@@ -1,6 +1,6 @@
 # Youtube Clone
 Made with React.js Framework and HTML / CSS for markup.
-YouTube API used to to fetch videos.
+YouTube API used to fetch videos.
 
 Aim : Make a webapp that utilises Redux for state management.
 
